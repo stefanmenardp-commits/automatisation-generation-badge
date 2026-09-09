@@ -6,24 +6,24 @@ Pour faciliter la génération automatique des badges, il est essentiel d’inst
 
 Intégrer une logique identique sur le nom des champs utilisés, permet de faciliter la détection automatique des parties de texte à remplacer. Proposition de l’uniformisation des champs : 
 
-- <PRENOM>
-- <NOM>
-- <<ENTREPRISE>>
-- <<VOIE>>
-- <<NUMERO>> 
-- <<ZONE>>
-- <<NOM TABLE>>
+- PRENOM
+- NOM
+- ENTREPRISE
+- VOIE
+- NUMERO 
+- ZONE
+- NOM TABLE
 
 ## Le gras
 
 Mettre en place d’une règle d’uniformisation sur l’utilisation du gras sur les différents champs. Proposition de gras à intégrer : 
 
-- <<PRENOM>> = Pas gras
-- <<NOM>> = Gras
-- <<ENTREPRISE>> = Gras
-- <<VOIE>> = Gras
-- <<NUMERO>>  = Gras
-- <<NOM TABLE>> = Gras
+- PRENOM = Pas gras
+- NOM = Gras
+- ENTREPRISE = Gras
+- VOIE = Gras
+- NUMERO  = Gras
+- NOM TABLE = Gras
 
 ## Couleur
 
