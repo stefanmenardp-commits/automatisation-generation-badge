@@ -100,7 +100,7 @@ Tout ce qui concerne la génération des badges se faisait sur un fichier Google
 
 Pour faciliter la génération automatique des badges, il était essentiel d’instaurer un cadre pour les templates des badges de tous les événements. Pour éviter les erreurs de génération lors des utilisations, voici les axes d'uniformisation identifiés pour les champs à changer pour chaque participant sur les badges : 
 
-- champs à changer et nom attribué dans les templates (<<PRENOM>>, <<NOM>>, etc.)
+- champs à changer et nom attribué dans les templates (PRENOM, NOM, etc.)
 - style sur les champs (gras, couleur, police)
 - placement des champs
 - structure (A4, sur une page, a plier ou non, etc.)
