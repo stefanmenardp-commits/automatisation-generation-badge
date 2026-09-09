@@ -59,7 +59,7 @@ Cette intégration des templates se passe sur le stockage Drive, dans le dossier
 
 Le service propose de générer des badges pour de multiples événements, ce qui se traduit par la présence de plusieurs dossiers associés à ces événements.
 
-Concernant la structure des templates, il est indispensable de suivire une charte d’homogénéisation. Ce besoin de d’uniformisation s’explique par l’automatisation, empêchant une personnalisation extrême. Ces règles interviennent sur ces sujets \(voici le [fichier](https://whimsical.com/regle-uniformisation-template-badge-KSgCajTxFN4pXtN8EDNWu4) détaillant les régles\) : 
+Concernant la structure des templates, il est indispensable de suivire une charte d’homogénéisation. Ce besoin de d’uniformisation s’explique par l’automatisation, empêchant une personnalisation extrême. Ces règles interviennent sur ces sujets, détaillant les régles\) : 
 
 - Nom des champs dynamiques
 - Gras sur les champs dynamiques
@@ -76,7 +76,7 @@ Pour mettre à jour la liste des templates \(Type template - colonne K\) dans l�
 
 ## Génération des badges \+ Téléchargement
 
-A propos de la génération des badges, l’utilisateur se basera uniquement sur un fichier Google Spreadsheet, du nom de [listing\_participant](https://docs.google.com/spreadsheets/d/1rYxJa7aHY5UfjlFtIUv-wOkfvMDzlXYtJewwU7MXgaI/edit?usp=sharing).  Son utilisation réside dans l’identification des participants avec le besoin de génération de badge. Lorsque c’est fait, il suffit : 
+A propos de la génération des badges, l’utilisateur se basera uniquement sur un fichier Google Spreadsheet, du nom de listing\_participant.  Son utilisation réside dans l’identification des participants avec le besoin de génération de badge. Lorsque c’est fait, il suffit : 
 
 - D’indiquer les champs manuels \(Voie, Numéro et Nom table - Colonne F, G et H\)
 - De sélectionner les templates sur lesquels baser la génération des badges \(Type template - Colonne K\)
@@ -89,11 +89,11 @@ A propos de la génération des badges, l’utilisateur se basera uniquement sur
 
 Pour ce qui est de l’authentification des différentes entités pour exécuter les différentes étapes : 
 
-- Modules Google N8N \(Drive, Spreadsheet\) \(sur le compte Google du client\) → [Service Account](https://docs.google.com/document/d/1fjmvO-7EomftFDW_PqOYGx1UfPSypu5u34kc7DaSDQs/edit?usp=sharing)
-- Module Google N8N \(Drive\) - Upload Generate PDF and merge PDF → [OAuth - Projet GCP \(n8n-hub-automatisation\) - Externe Production](https://docs.google.com/document/d/1fjmvO-7EomftFDW_PqOYGx1UfPSypu5u34kc7DaSDQs/edit?usp=sharing)
-- Module N8N Mail \(Gmail d’AWAM\) \(temporaire, à changer\) → OAuth - Projet GCP - Interne
-- Exécution script Apps Script sur le compte Google du client → [OAuth - Projet GCP \(n8n-hub-automatisation\) - Externe Production](https://docs.google.com/document/d/1fjmvO-7EomftFDW_PqOYGx1UfPSypu5u34kc7DaSDQs/edit?usp=sharing)
-- Exécution Cloud function \(Create Badge et Badge merger\) → Projet GCP \(AWAM-PROJECT-DATA\)
+- Modules Google N8N \(Drive, Spreadsheet\) \(sur le compte Google du client\) → Service Account
+- Module Google N8N \(Drive\) - Upload Generate PDF and merge PDF → OAuth - Projet GCP \(n8n-hub-automatisation\) - Externe Production
+- Module N8N Mail \(Gmail d’xxx\) \(temporaire, à changer\) → OAuth - Projet GCP - Interne
+- Exécution script Apps Script sur le compte Google du client → OAuth - Projet GCP \(n8n-hub-automatisation\) - Externe Production
+- Exécution Cloud function \(Create Badge et Badge merger\) → Projet GCP \(xxx-PROJECT-DATA\)
 
 # Différents processus - côté back
 
@@ -112,7 +112,7 @@ Le processus 1 répond au besoin d’obtenir dynamiquement les templates lors de
 - **Apps Script** → Intégration de la sélection dynamique des templates sur chaque participation via Validation de données \(Fichier Apps script “Type template dynamique.gs” ET fonction main “applyTemplateValidation”\)
     - Déclencheur : La fin du Workflow de N8N
 
-**Détail sur le fonctionnement du Workflow N8N _\(Nom workflow : French tech - Template dynamique\)_ : **
+**Détail sur le fonctionnement du Workflow N8N _\(Nom workflow : xxx - Template dynamique\)_ : **
 
 - Récupération des lignes des templates existants sur l’onglet “template” du fichier listing\_participant
 - Suppression des lignes avec les templates existants
@@ -137,7 +137,7 @@ La structure technique se présente sous cette forme :
         - Gmail
         - API Hello Asso
 
-**Détail sur le fonctionnement du Workflow N8N - Phase 1 - Récupération des participants _\(Nom workflow : French tech - Récupération/Suppression Participant Hello Asso\)_ :**
+**Détail sur le fonctionnement du Workflow N8N - Phase 1 - Récupération des participants _\(Nom workflow : xxx - Récupération/Suppression Participant Hello Asso\)_ :**
 
 - Extraction API Hello Asso
     - Récupération de l’Access Token
@@ -152,7 +152,7 @@ La structure technique se présente sous cette forme :
     - Uniformisation de la date d’événement \(passage en string et suppression des “-”\)
 - Analyse des dossiers Drive \(“stockage\_badge” et “template\_badge”\)
     - Si événement déjà présent - Aucune action
-    - Si événement non présent - Création du dossier et notification de la French Tech par mail \(pour les mettre au courant de la possibilité d’ajouter les templates de badge\)
+    - Si événement non présent - Création du dossier et notification de la xxx par mail \(pour les mettre au courant de la possibilité d’ajouter les templates de badge\)
 
 **Détail sur le fonctionnement du Workflow N8N - Phase 2 - Gestion des données existantes :**
 
@@ -178,7 +178,7 @@ La structure technique se présente sous cette forme :
         - Gmail
         - Google Cloud Function
 
-**Détail sur le fonctionnement du Workflow N8N - Commun aux 2 phases _\(Nom workflow : French tech - Génération de badge\)_ : **
+**Détail sur le fonctionnement du Workflow N8N - Commun aux 2 phases _\(Nom workflow : xxx - Génération de badge\)_ : **
 
 - Récupération des participants de l’onglet “listing” du fichier Spreadsheet - Seulement ceux à OUI pour la génération de badge
 - Filtre pour garder uniquement les participants avec un type de template indiqué
@@ -198,7 +198,7 @@ La structure technique se présente sous cette forme :
 - Analyse du dossier Drive \(“template\_badge”\) - Récupération du template sélectionné pour la génération du badge du participant
     - Récupération du dossier de l’événement lié au participant
     - Récupération et téléchargement du fichier template sélectionné
-- Génération du badge individuel - Appel de la [Cloud Function](https://console.cloud.google.com/run/detail/europe-west1/frenchtech-generation-badge/source?hl=fr&project=mcp-jerem)
+- Génération du badge individuel - Appel de la Cloud Function
 - Intégration du badge individuel dans le dossier de la date du jour de l’événement \(“stockage\_badge” → Evenement → Date du jour\)
 
 **Détail sur le fonctionnement du Workflow N8N - Phase 2 - Génération des badges merges :**
@@ -212,11 +212,11 @@ La structure technique se présente sous cette forme :
     - Récupération et suppression si présence d’un fichier fusionné déjà présent
     - Récupération et téléchargement de tous les badges individuels existants
     - Transformation de données pour rassembler tous les fichiers dans une même entité et passage sous fichier ZIP
-    - Génération du badge fusionné - Appel de la [Cloud Function](https://console.cloud.google.com/run/detail/europe-west1/frenchtech-merge-badge/source?hl=fr&project=mcp-jerem)
+    - Génération du badge fusionné - Appel de la Cloud Function
     - Intégration du badges fusionné dans le dossier Drive de la date du jour de l’événement traité
 - Phase suivant la fin des itérations de la boucle \(Done\)
     - Aggrégation pour obtenir un item \(Pour effectuer qu’une seule fois l’action qui va suivre\)
-    - Notification de la French Tech par mail \(pour les mettre au courant de la fin de la génération des badges individuels et fusionnés\)
+    - Notification de la xxx par mail \(pour les mettre au courant de la fin de la génération des badges individuels et fusionnés\)
 
 ## Process 4 - Contrôle des homonymes
 
