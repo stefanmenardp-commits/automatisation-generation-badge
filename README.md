@@ -46,7 +46,7 @@ Le besoin consistait à permettre aux utilisateurs de :
 - associer un template à chaque événement
 - générer rapidement les badges au format PDF
 - regrouper les badges dans un fichier unique
-- identifier les éventuels erreurs (doublon)
+- identifier les éventuels homonymes
 
 ---
 
@@ -118,6 +118,8 @@ Il existe 3 scénarios créés avec le logiciel low code n8n, qui vient découpe
 - Récupération et maj des participants entre Hello Asso et le fichier central
 - Synchronisation des templates de badge présent sur Google Drive et le fichier central
 - Génération des badges
+
+Un script Google Apps Script complémentaire permet également d’identifier les homonymes dans le fichier central et de les mettre en évidence afin de limiter les erreurs lors de la génération ou de la distribution des badges. Je ne le développerai pas dans ce fichier, mais possibilité de retrouver l'explication complète ici [docs/]()
 
 ### Récupération et maj des participants entre Hello Asso et le fichier central
 
