@@ -11,7 +11,7 @@ Pour ce qui est de la technique, on retrouve 3 outils majoritaires :
 - **N8N** → Automatisation des différents processus entre les services/outils
     - **Cloud function** → Code spécifique pour des tâches complexes ou non accessible sur N8N \(génération de badge \+ Fusion des badges\)
 - **Google Drive** → Stockage des différents fichiers \(template, badge généré et listing des participants\)
-- **Google Sheet → **Listing des participants et sélection pour génération de badge
+- **Google Sheet** → **Listing des participants et sélection pour génération de badge
     - **Google Apps Script **→ Code spécifique lié au Sheet OU lien du Sheet avec N8N \(Versionning dynamique des templates \+ Génération des badges \+ Contrôle des homonymes\)
 
 # Structure du stockage - Google Drive
