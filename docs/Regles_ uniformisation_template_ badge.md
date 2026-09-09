@@ -6,8 +6,8 @@ Pour faciliter la génération automatique des badges, il est essentiel d’inst
 
 Intégrer une logique identique sur le nom des champs utilisés, permet de faciliter la détection automatique des parties de texte à remplacer. Proposition de l’uniformisation des champs : 
 
-- <<PRENOM>>
-- <<NOM>>
+- <PRENOM>
+- <NOM>
 - <<ENTREPRISE>>
 - <<VOIE>>
 - <<NUMERO>> 
